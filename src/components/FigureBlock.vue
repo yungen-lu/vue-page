@@ -7,7 +7,11 @@
     <v-row justify="center">
       <v-btn class="mt-8 mx-4" @click="gotoPost()">Get Started</v-btn>
       <v-btn class="mt-8 mx-4">
-        <a href="https://github.com/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit"
+        <a
+          href="https://github.com/yungen-lu/vue-page"
+          target="_blank"
+          rel="noopener"
+          style="text-decoration: none; color: inherit"
           >Github Repo</a
         >
       </v-btn>

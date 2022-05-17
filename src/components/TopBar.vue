@@ -19,7 +19,12 @@
           <v-autocomplete v-model="selected" :items="items" :search-input.sync="search" :no-filter="true" />
         </v-col>
         <v-col cols="auto">
-          <a href="https://github.com/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit">
+          <a
+            href="https://github.com/yungen-lu/vue-page"
+            target="_blank"
+            rel="noopener"
+            style="text-decoration: none; color: inherit"
+          >
             <v-icon> mdi-github </v-icon>
           </a>
         </v-col>
