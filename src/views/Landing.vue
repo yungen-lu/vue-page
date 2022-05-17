@@ -1,6 +1,6 @@
 <template>
   <main>
-    <figure-block></figure-block>
+    <figure-block />
   </main>
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from '@vue/composition-api';
 import FigureBlock from '@/components/FigureBlock.vue';
 export default defineComponent({
-  name: 'landing',
+  name: 'LandingView',
   components: { FigureBlock },
 });
 </script>

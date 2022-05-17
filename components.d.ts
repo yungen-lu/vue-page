@@ -6,6 +6,7 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ArticleBlock: typeof import('./src/components/ArticleBlock.vue')['default']
+    BreadCrumb: typeof import('./src/components/BreadCrumb.vue')['default']
     FigureBlock: typeof import('./src/components/FigureBlock.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -14,19 +15,24 @@ declare module '@vue/runtime-core' {
     VApp: typeof import('vuetify/lib')['VApp']
     VAppBar: typeof import('vuetify/lib')['VAppBar']
     VAppBarNavIcon: typeof import('vuetify/lib')['VAppBarNavIcon']
+    VAutocomplete: typeof import('vuetify/lib')['VAutocomplete']
     VBreadcrumbs: typeof import('vuetify/lib')['VBreadcrumbs']
     VBtn: typeof import('vuetify/lib')['VBtn']
     VCol: typeof import('vuetify/lib')['VCol']
     VContainer: typeof import('vuetify/lib')['VContainer']
+    VHover: typeof import('vuetify/lib')['VHover']
     VIcon: typeof import('vuetify/lib')['VIcon']
+    ViewCount: typeof import('./src/components/ViewCount.vue')['default']
     VImg: typeof import('vuetify/lib')['VImg']
+    VList: typeof import('vuetify/lib')['VList']
+    VListItem: typeof import('vuetify/lib')['VListItem']
+    VListItemGroup: typeof import('vuetify/lib')['VListItemGroup']
+    VListItemTitle: typeof import('vuetify/lib')['VListItemTitle']
     VMain: typeof import('vuetify/lib')['VMain']
     VNavigationDrawer: typeof import('vuetify/lib')['VNavigationDrawer']
-    VResponsive: typeof import('vuetify/lib')['VResponsive']
     VRow: typeof import('vuetify/lib')['VRow']
-    VSheet: typeof import('vuetify/lib')['VSheet']
-    VSkeletonLoader: typeof import('vuetify/lib')['VSkeletonLoader']
     VSpacer: typeof import('vuetify/lib')['VSpacer']
+    VSubheader: typeof import('vuetify/lib')['VSubheader']
   }
 }
 

@@ -1,17 +1,24 @@
-import Vue from "vue";
-import vueCompositionApi from "@vue/composition-api";
+import Vue from 'vue';
+import VueCompositionApi, { createApp } from '@vue/composition-api';
 
-import vuetify from "./plugins/vuetify";
-import router from "./router";
-import store from "./store";
-import App from "./App.vue";
+import vuetify from './plugins/vuetify';
+import router from './router';
+import store from './store';
+import App from './App.vue';
 
-Vue.use(vueCompositionApi);
+Vue.use(VueCompositionApi);
 Vue.config.productionTip = true;
 
-new Vue({
-  router,
-  vuetify,
-  store,
+const app = createApp({
   render: (h) => h(App),
-}).$mount("#app");
+  router,
+  store,
+  vuetify,
+});
+app.mount('#app');
+// new Vue({
+//   router,
+//   vuetify,
+//   store,
+//   render: (h) => h(App),
+// }).$mount('#app');

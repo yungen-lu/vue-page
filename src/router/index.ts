@@ -1,27 +1,28 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import type { RouteConfig } from 'vue-router/types/router';
-import Landing from '@/views/Landing.vue';
-import Post from '@/views/Post.vue';
-
+import LandingView from '@/views/Landing.vue';
+import PostView from '@/views/Post.vue';
+// eslint-disable-next-line import/no-unresolved
+import routes from '~pages';
 Vue.use(VueRouter);
 
-const routes: RouteConfig[] = [
+const myroutes: RouteConfig[] = [
   {
     path: '/',
-    name: 'landing',
-    component: Landing,
+    name: 'LandingView',
+    component: LandingView,
   },
   {
     path: '/post',
-    name: 'post',
-    component: Post,
+    name: 'PostView',
+    component: PostView,
   },
 ];
 
 const router = new VueRouter({
   mode: 'history',
-  routes,
+  routes: [...myroutes, ...routes],
 });
 
 export default router;

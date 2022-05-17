@@ -1,12 +1,16 @@
 <template>
   <header class="d-block text-center">
     <figure>
-      <vue-icon></vue-icon>
+      <vue-icon />
     </figure>
-    <h1 class="headline">A blog about awesome things related to Vue.js</h1>
+    <h1 class="text-h5">Welcome to our website!</h1>
     <v-row justify="center">
       <v-btn class="mt-8 mx-4" @click="gotoPost()">Get Started</v-btn>
-      <v-btn class="mt-8 mx-4">Github Repo</v-btn>
+      <v-btn class="mt-8 mx-4">
+        <a href="https://github.com/" target="_blank" rel="noopener" style="text-decoration: none; color: inherit"
+          >Github Repo</a
+        >
+      </v-btn>
     </v-row>
   </header>
 </template>
