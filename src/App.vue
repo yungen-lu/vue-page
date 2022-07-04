@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import TopBar from './components/TopBar.vue';
 import BreadCrumb from './components/BreadCrumb.vue';
 import ViewCount from './components/ViewCount.vue';

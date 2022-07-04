@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import FigureBlock from '@/components/FigureBlock.vue';
 export default defineComponent({
   name: 'LandingView',

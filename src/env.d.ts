@@ -1,10 +1,6 @@
 /* eslint-disable */
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pages/client" />
-// declare module '*.vue' {
-//   import { defineComponent } from 'vue'
-//   export default defineComponent
-// }
 declare module '*.vue' {
   import { DefineComponent } from 'vue';
   // const component: ReturnType<typeof defineComponent>;

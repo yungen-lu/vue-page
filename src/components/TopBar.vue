@@ -2,7 +2,8 @@
   <div>
     <v-app-bar app clipped-left elevation="4">
       <v-row align="center" justify="center">
-        <v-app-bar-nav-icon @click="clickDrawer()" />
+        <!-- <v-row> -->
+        <!-- <v-app-bar-nav-icon @click="clickDrawer()" /> -->
         <v-col cols="auto">
           <router-link to="/" style="color: inherit; text-decoration: none">
             <v-icon> mdi-notebook </v-icon>
@@ -16,7 +17,16 @@
       </v-col> -->
         <v-spacer />
         <v-col cols="auto">
-          <v-autocomplete v-model="selected" :items="items" :search-input.sync="search" :no-filter="true" />
+          <v-autocomplete
+            v-model="selected"
+            :items="items"
+            :search-input.sync="search"
+            :no-filter="true"
+            hide-details
+          />
+        </v-col>
+        <v-col cols="auto">
+          <v-switch v-on:change="changeMode" hide-details inset color="#b4b2d0" />
         </v-col>
         <v-col cols="auto">
           <a
@@ -45,7 +55,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import Fuse from 'fuse.js';
 
 type post = {
@@ -103,7 +113,12 @@ export default defineComponent({
       this.drawer = !this.drawer;
     },
     querySelections(input: string) {
-      this.result = this.fuse.search(input);
+      if (input) {
+        this.result = this.fuse.search(input);
+      }
+    },
+    changeMode(isOn: boolean) {
+      this.$vuetify.theme.dark = isOn;
     },
   },
 });

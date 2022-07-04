@@ -24,5 +24,11 @@ const router = new VueRouter({
   mode: 'history',
   routes: [...myroutes, ...routes],
 });
+router.afterEach((to, _from) => {
+  const arr = to.path.split('/post/');
+  if (arr.length === 2) {
+    router.app.$store.commit('incrementViewCount', to.path);
+  }
+});
 
 export default router;

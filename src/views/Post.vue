@@ -4,11 +4,7 @@
       <div class="mx-auto px-12 d-block">
         <div class="d-flex flex-wrap">
           <v-col cols="12">
-            <router-link
-              :to="topPost.path"
-              style="color: inherit; text-decoration: none"
-              @click.native="postClickHandler(topPost.path)"
-            >
+            <router-link :to="topPost.path" style="color: inherit; text-decoration: none">
               <top-article-block
                 :title="topPost.title"
                 :summary="topPost.summary"
@@ -19,11 +15,7 @@
             </router-link>
           </v-col>
           <v-col v-for="post in subPost" :key="post.path" cols="12" sm="6" lg="4">
-            <router-link
-              :to="post.path"
-              style="color: inherit; text-decoration: none"
-              @click.native="postClickHandler(post.path)"
-            >
+            <router-link :to="post.path" style="color: inherit; text-decoration: none">
               <article-block
                 :title="post.title"
                 :summary="post.summary"
@@ -40,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import ArticleBlock from '@/components/ArticleBlock.vue';
 import TopArticleBlock from '@/components/TopArticleBlock.vue';
 
@@ -70,9 +62,6 @@ export default defineComponent({
   methods: {
     dateToString(date: string) {
       return new Date(date).toLocaleDateString();
-    },
-    postClickHandler(path: string) {
-      this.$store.commit('incrementViewCount', path);
     },
   },
 });

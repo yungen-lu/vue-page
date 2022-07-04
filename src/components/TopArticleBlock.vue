@@ -20,7 +20,7 @@
   </v-hover>
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 // type post = {
 //   title: string;
 //   summary: string;

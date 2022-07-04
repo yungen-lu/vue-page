@@ -1,14 +1,15 @@
 import { defineConfig } from 'vite';
-import { createVuePlugin as vue } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue2';
 import Components from 'unplugin-vue-components/vite';
 import { VuetifyResolver } from 'unplugin-vue-components/resolvers';
-import Markdown from 'vite-plugin-md';
+import Markdown from 'vite-plugin-vue-markdown';
 import Pages from 'vite-plugin-pages';
 import path, { resolve } from 'path';
 import matter from 'gray-matter';
 // import eslintPlugin from '@modyqyw/vite-plugin-eslint';
 import anchor from 'markdown-it-anchor';
 import Prism from 'markdown-it-prism';
+import markdownAttrs from 'markdown-it-attrs';
 import * as fs from 'fs';
 
 import 'prismjs/components/prism-clike';
@@ -41,10 +42,9 @@ export default defineConfig({
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],
-      target: 'esnext',
     }),
     Pages({
-      extensions: ['vue', 'ts', 'md'],
+      extensions: ['vue', 'md'],
       dirs: [{ dir: 'posts', baseRoute: 'post' }],
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1));
@@ -55,6 +55,11 @@ export default defineConfig({
       },
     }),
     Markdown({
+      wrapperClasses: 'px-12',
+      markdownItOptions: {
+        breaks: true,
+        quotes: '""\'\'',
+      },
       markdownItSetup(md) {
         md.use(Prism);
         md.use(anchor, {
@@ -62,6 +67,7 @@ export default defineConfig({
             placement: 'before',
           }),
         });
+        md.use(markdownAttrs);
       },
     }),
     Components({

@@ -2,7 +2,7 @@
   <v-breadcrumbs :items="items" />
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 type item = {
   text: string;
   disabled: boolean;

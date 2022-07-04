@@ -2,7 +2,7 @@
   <v-subheader v-if="onPostPage" class="text-right">viewCount: {{ viewCount }}</v-subheader>
 </template>
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 export default defineComponent({
   computed: {
     viewCount() {
